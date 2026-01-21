@@ -1,25 +1,11 @@
-import React from 'react'
-import { useQuery } from '@tanstack/react-query'
-import type { Blog } from '../../types/blog'
+import { useBlog } from '../../hooks/useBlogs'
 
 const BlogDetail = ({ detailed }: {
   detailed: string
 }) => {
   console.log(detailed)
 
-  const { data: blog, error, isPending, isFetching } = useQuery<Blog, Error>({
-    queryKey: ["blog", detailed],
-    queryFn: async () => {
-      const rep = await fetch(
-        `http://localhost:3001/blogs/${detailed}`
-      );
-      if (!rep.ok) {
-        console.log(rep.status)
-        throw new Error(`Server error: ${rep.status}`)
-      }
-      return await rep.json();
-    }
-  });
+  const { data: blog, error, isPending, isFetching } = useBlog(detailed);
 
   if (isPending) return "Loading";
 
@@ -31,7 +17,7 @@ const BlogDetail = ({ detailed }: {
       <div className="data flex flex-col text-left mx-15 my-15 gap-8">
         <div className="typeAndDate flex gap-4">
           <div className='uppercase font-bold text-violet-600'>{blog?.category.join(" • ")}</div>•
-          <div className='lowercase'>{parseInt((blog?.date).split("T")[1].split(":")[0]) <= 7 ? 5:10} min read</div>
+          <div className='lowercase'>{parseInt((blog?.date!).split("T")[1].split(":")[0]) <= 7 ? 5:10} min read</div>
         </div>
         <div className="heading text-6xl font-extrabold">
           {blog?.title}
@@ -44,11 +30,11 @@ const BlogDetail = ({ detailed }: {
           </div>
           <div className='w-[33%] py-10 bg-gray-100'>
             <div className="readTime uppercase font-bold text-gray-500">Read Time</div>
-            <div className="subheading font-bold text-xl ">{parseInt((blog?.date).split("T")[1].split(":")[0]) <= 7 ? 5:10} Mins</div>
+            <div className="subheading font-bold text-xl ">{parseInt((blog?.date!).split("T")[1].split(":")[0]) <= 7 ? 5:10} Mins</div>
           </div>
           <div className='w-[33%] py-10 bg-gray-100'>
             <div className="date uppercase font-bold text-gray-500">Date</div>
-            <div className="subheading font-bold text-xl ">{(blog?.date).split("T")[0]}</div>
+            <div className="subheading font-bold text-xl ">{(blog?.date!).split("T")[0]}</div>
           </div>
         </div>
         <div className="content text-2xl">
