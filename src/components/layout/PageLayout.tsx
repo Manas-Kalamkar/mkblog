@@ -1,25 +1,12 @@
-import { useQuery } from '@tanstack/react-query'
-import type { Blog } from '../../types/blog';
 import BlogList from '../blog/BlogList';
 import BlogDetail from '../blog/BlogDetail';
 import { useState } from 'react';
+import { useBlogs } from '../../hooks/useBlogs';
 const PageLayout = () => {
 
-const [detailed,setDetailed] = useState("1");
+  const [detailed, setDetailed] = useState("1");
 
-  const { data, isPending, error, isFetching } = useQuery<Blog[], Error>({
-    queryKey: ["blogsData"],
-    queryFn: async () => {
-      const response = await fetch(
-        'http://localhost:3001/blogs'
-      );
-
-      if (!response.ok) {
-        throw new Error(`Server error: ${response.status}`)
-      }
-      return await response.json();
-    },
-  });
+  const { data, isPending, error, isFetching } = useBlogs();
 
   if (isPending) return "Loading..."
 
@@ -29,9 +16,9 @@ const [detailed,setDetailed] = useState("1");
     <>
       <div>{isFetching ? 'Updating...' : ''}</div>
       <div className='flex py-[2%]'>
-      <BlogList data={data}  setDetailed={setDetailed} />
-      <BlogDetail detailed={detailed} />
-        
+        <BlogList data={data ?? []} setDetailed={setDetailed} />
+        <BlogDetail detailed={detailed} />
+
       </div>
     </>)
 }
