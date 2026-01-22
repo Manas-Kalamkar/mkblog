@@ -1,0 +1,24 @@
+[33m9feeb18[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfirstBranch[m[33m)[m feat: import shadcn UI components
+[33m44fca19[m feat: add shadcn UI components
+[33m373a290[m feat: add API POST function
+[33m38d6707[m style: add initial shadcn base styles
+[33m5b301c9[m docs: add prerequisites for shadcn installation
+[33m4b984ff[m feat: created useBlog and useBlogs hook
+[33m2369dfb[m[33m ([m[1;31morigin/firstBranch[m[33m)[m feat: created useBlogs hook for blog list
+[33mc0d8b17[m feat: created useBlog hook for detailed blog page
+[33mdaeaaa7[m feat: implement BlogDetail page with dynamic data fetching
+[33mba0b133[m feat: implement BlogCard component for the main feed
+[33m1e7d571[m eat: implement BlogList component with card layout
+[33md7b6bcd[m feat: implement PageLayout for core application structure
+[33mcbd9b28[m blogs interface is created
+[33m4e4460c[m query client provided to the app.tsx
+[33mb2ae9fb[m tanstack react query devtools installed
+[33m961dba3[m tanstack/react-query-devtools installed
+[33me4795cd[m[33m ([m[1;32mmain[m[33m)[m All the dependencies are installed.
+[33m564b87d[m created new files for Blog Page
+[33mbbd394c[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Update README with forking instructions and clarifications
+[33md7a0d97[m Add styling requirements to README
+[33ma643b87[m Update README.md with new content
+[33m5164084[m Remove 'Useful Resources' section
+[33mec0b13c[m Update blog entries with enhanced categories, descriptions, and content for improved clarity and relevance
+[33m98dc77a[m inital-setup
