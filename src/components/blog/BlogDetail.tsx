@@ -15,7 +15,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { BlogDetailSkeleton } from '../layout/Loading';
+import { BlogDetailSkeleton, Loading } from '../layout/Loading';
 
 const BlogDetail = ({ detailed }: {
   detailed: string
@@ -30,6 +30,7 @@ const BlogDetail = ({ detailed }: {
 
   return (
     <Card className='py-0  md:h-fit  flex flex-col justify-center items-center md:mx-10 shadow-2xl w-screen'>
+      {isFetching?<Loading />:""}
       <img src={blog?.coverImage} alt={"cover image"} className='w-fit md:w-full md:h-200 md:object-cover rounded-t-2xl' />
 
       <div className="data flex flex-col  mx:-2  md:mx-15 my-15 gap-8 lg:gap-16">

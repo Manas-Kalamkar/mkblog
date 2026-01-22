@@ -17,9 +17,17 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 
+export const Loading = () => {
+    return (
+        <div className="flex flex-col m-auto text-center animate-bounce">
+            Fetching...
+        </div>
+    )
+}
+
 export const BlogDetailSkeleton = () => {
     return (
-        <Card className="py-0 h-fit w-[72%] flex flex-col items-center mx-10 shadow-2xl">
+        <Card className="py-0 h-fit w-[80%] flex flex-col items-center mx-10 shadow-2xl">
 
             <Skeleton className="aspect-video w-full rounded-t-2xl" />
 
@@ -81,7 +89,8 @@ export const BlogDetailSkeleton = () => {
 
 export const BlogCardSkeleton = () => {
     return (
-        <Card className="flex flex-col gap-2.5 border-2 border-gray-100 w-[90%] px-8 py-4">
+        <Card className="flex flex-col gap-2.5 border-2 border-gray-100 w-[80%] md:w-[27%] px-8 py-4 mx-10">
+            <strong className='text-4xl text-left'>Latest Articles</strong>
 
             {/* Category + date */}
             <div className="flex justify-between">
