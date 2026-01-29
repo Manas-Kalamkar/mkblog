@@ -1,6 +1,6 @@
-# 📝 CA Monk Blog Application
+# 📝 CA Monk Blog Website
 
-This repository contains my solution for the **CA Monk Frontend Internship – Blog Application Assignment**. The goal of this project is to build a modern, responsive blog application using **React + TypeScript**, with proper server-state management, clean UI, and well-structured components.
+This repository contains my solution for the **CA Monk Frontend Internship – Blog Application Website**. The goal of this project is to build a modern, responsive blog application using **React + TypeScript**, with proper server-state management, clean UI, and well-structured components.
 
 The application allows users to view blogs, read a blog in detail, and create new blogs using a mock backend powered by **JSON Server**.
 
