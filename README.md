@@ -2,7 +2,7 @@
 
 This repository contains my solution for the **CA Monk Frontend Internship – Blog Application Website**. I elevated the project requirements by migrating the initial local JSON Server to a **live Cloud Backend (Supabase)**, creating a fully functional, deployable full-stack experience.
 
-## 🚀 Live Demo:** [https://manas-kalamkar.github.io/Blog_Website/](https://manas-kalamkar.github.io/mkblog/)
+## 🚀 Live Demo: [https://manas-kalamkar.github.io/Blog_Website/](https://manas-kalamkar.github.io/mkblog/)
 
 
 ## 📷 Screenshots
